@@ -10,7 +10,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            VStack {
+                List {
+                    TopicsRow(topicTitle: "Test")
+                    TopicsRow(topicTitle: "Topic")
+                    TopicsRow(topicTitle: "List")
+                }
+            }.navigationBarTitle(Text("Topics"))
+        }
     }
 }
 
