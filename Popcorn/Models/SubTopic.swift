@@ -1,5 +1,5 @@
 //
-//  Topic.swift
+//  SubTopic.swift
 //  Popcorn
 //
 //  Created by Luca Kaufmann on 21.4.2020.
@@ -7,11 +7,9 @@
 //
 
 import Foundation
-import SwiftUI
 
-
-struct Topic: Hashable, Codable, Identifiable {
-    var title: String
+struct SubTopic: Hashable, Codable, Identifiable {
     var id: Int
-    var subTopics: [SubTopic]
+    var title: String
+    var videos: [Video]
 }

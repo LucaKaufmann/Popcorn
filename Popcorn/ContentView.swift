@@ -12,10 +12,10 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List {
-                    TopicsRow(topicTitle: "Test")
-                    TopicsRow(topicTitle: "Topic")
-                    TopicsRow(topicTitle: "List")
+                List(topicsData) { topic in
+                    NavigationLink(destination: TopicDetail(topic: topic)) {
+                        TopicsRow(topic: topic)
+                    }
                 }
             }.navigationBarTitle(Text("Topics"))
         }

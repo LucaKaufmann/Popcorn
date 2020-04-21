@@ -10,12 +10,12 @@ import SwiftUI
 
 struct TopicsRow: View {
     
-    var topicTitle: String = "Topic title"
+    var topic: Topic
     
     var body: some View {
         HStack {
             VStack {
-                Text(topicTitle)
+                Text(topic.title)
             }
             Spacer()
             Image(systemName: "book")
@@ -26,6 +26,6 @@ struct TopicsRow: View {
 
 struct TopicsRow_Previews: PreviewProvider {
     static var previews: some View {
-        TopicsRow()
+        TopicsRow(topic: topicsData[0])
     }
 }
