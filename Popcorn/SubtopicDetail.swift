@@ -14,11 +14,12 @@ struct SubtopicDetail: View {
     
     var body: some View {
         VStack {
+            VideoView()
             List(subTopic.videos) { video in
-//                    NavigationLink(destination: LandmarkDetail(landmark: landmark)) {
-//                    TopicsRow(topic: topic)
-//                    }
-                Text(video.title)
+                NavigationLink(destination: VideoDetailView()) {
+                    Text(video.title)
+                }
+                
             }
          }.navigationBarTitle(subTopic.title)
     }
