@@ -9,13 +9,16 @@
 import SwiftUI
 
 struct VideoDetailView: View {
+    
+    @State var videoFile: String
+    
     var body: some View {
-        Text("Test")
+        VideoView(videoFile: videoFile)
     }
 }
 
 struct VideoDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        VideoDetailView()
+        VideoDetailView(videoFile: "Cats")
     }
 }

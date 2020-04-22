@@ -11,12 +11,10 @@ import SwiftUI
 struct SubtopicDetail: View {
     
     var subTopic: SubTopic
-    
     var body: some View {
         VStack {
-            VideoView()
             List(subTopic.videos) { video in
-                NavigationLink(destination: VideoDetailView()) {
+                NavigationLink(destination: VideoDetailView(videoFile: video.url)) {
                     Text(video.title)
                 }
                 

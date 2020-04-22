@@ -178,10 +178,15 @@ struct VideoPlayerContainerView : View {
     // Whether we're currently interacting with the seek bar or doing a seek
     @State private var seeking = false
     
+    @State private var videoUrl: String = ""
+    
+    
     private let player: AVPlayer
   
     init(url: URL) {
+        print("URL: \(url.relativeString)")
         player = AVPlayer(url: url)
+        videoUrl = url.absoluteString
     }
   
     var body: some View {
@@ -204,7 +209,23 @@ struct VideoPlayerContainerView : View {
 
 // This is the main SwiftUI view for this app, containing a single PlayerContainerView
 struct VideoView: View {
+    var videoFile: String
     var body: some View {
-        VideoPlayerContainerView(url: URL(string: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8")!)
+//        VideoPlayerContainerView(url: URL(string: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8")!)
+        
+        VideoPlayerContainerView(url: getFileUrl(name: videoFile))
+    }
+    
+    func getFileUrl(name: String) -> URL {
+        print("Video file: \(name)")
+        if name.contains("local:") {
+            let videoName = name.replacingOccurrences(of: "local:", with: "")
+            print("Getting url for video name: \(videoName)")
+            return Bundle.main.url(forResource: videoName, withExtension: "mp4")!
+
+        } else {
+            return URL(string: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8")!
+        }
+
     }
 }

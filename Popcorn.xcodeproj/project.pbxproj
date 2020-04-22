@@ -25,6 +25,8 @@
 		401C38ED24501C1E0041F7AA /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C38EC24501C1E0041F7AA /* VideoPlayerView.swift */; };
 		401C38F124501E320041F7AA /* VideoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C38F024501E320041F7AA /* VideoDetailView.swift */; };
 		401C38F4245024FA0041F7AA /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C38F3245024FA0041F7AA /* Utility.swift */; };
+		401C38F62450266E0041F7AA /* Cats.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 401C38F52450266E0041F7AA /* Cats.mp4 */; };
+		401C38F8245029A50041F7AA /* Snipe.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 401C38F7245029A40041F7AA /* Snipe.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		401C38EC24501C1E0041F7AA /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		401C38F024501E320041F7AA /* VideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailView.swift; sourceTree = "<group>"; };
 		401C38F3245024FA0041F7AA /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		401C38F52450266E0041F7AA /* Cats.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cats.mp4; sourceTree = "<group>"; };
+		401C38F7245029A40041F7AA /* Snipe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Snipe.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 		401C38E1244F60670041F7AA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				401C38F7245029A40041F7AA /* Snipe.mp4 */,
+				401C38F52450266E0041F7AA /* Cats.mp4 */,
 				401C38DF244F60640041F7AA /* data.json */,
 			);
 			path = Resources;
@@ -205,6 +211,8 @@
 				401C38CD244F40F40041F7AA /* Preview Assets.xcassets in Resources */,
 				401C38CA244F40F40041F7AA /* Assets.xcassets in Resources */,
 				401C38E0244F60640041F7AA /* data.json in Resources */,
+				401C38F62450266E0041F7AA /* Cats.mp4 in Resources */,
+				401C38F8245029A50041F7AA /* Snipe.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

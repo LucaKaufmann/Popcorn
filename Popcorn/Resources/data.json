@@ -10,12 +10,12 @@
                     {
                         "id": 10101,
                         "title": "A defender",
-                        "url": "https://google.com"
+                        "url": "local:Cats"
                     },
                     {
                         "id": 10102,
                         "title": "B defender",
-                        "url": "https://google.com"
+                        "url": "local:Snipe"
                     },
                     {
                         "id": 10103,
