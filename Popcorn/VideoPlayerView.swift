@@ -31,6 +31,12 @@ class VideoPlayerUIView: UIView {
         playerLayer.player = player
         layer.addSublayer(playerLayer)
         
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        } catch {
+                print("failed to set audio session")
+        }
+        
         // Observe the duration of the player's item so we can display it
         // and use it for updating the seek bar's position
         durationObservation = player.currentItem?.observe(\.duration, changeHandler: { [weak self] item, change in
