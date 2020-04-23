@@ -25,8 +25,36 @@
 		401C38ED24501C1E0041F7AA /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C38EC24501C1E0041F7AA /* VideoPlayerView.swift */; };
 		401C38F124501E320041F7AA /* VideoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C38F024501E320041F7AA /* VideoDetailView.swift */; };
 		401C38F4245024FA0041F7AA /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C38F3245024FA0041F7AA /* Utility.swift */; };
-		401C38F62450266E0041F7AA /* Cats.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 401C38F52450266E0041F7AA /* Cats.mp4 */; };
-		401C38F8245029A50041F7AA /* Snipe.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 401C38F7245029A40041F7AA /* Snipe.mp4 */; };
+		40AC6AC024518D1D00EFF78F /* viper_bind_a_a_point_wall.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6ABB24518D1D00EFF78F /* viper_bind_a_a_point_wall.mp4 */; };
+		40AC6AC124518D1D00EFF78F /* viper_bind_a_b_wall_smoke.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6ABC24518D1D00EFF78F /* viper_bind_a_b_wall_smoke.mp4 */; };
+		40AC6AC224518D1D00EFF78F /* viper_bind_a_a_heaven_wall.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6ABD24518D1D00EFF78F /* viper_bind_a_a_heaven_wall.mp4 */; };
+		40AC6AC324518D1D00EFF78F /* viper_bind_a_a_heaven.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6ABE24518D1D00EFF78F /* viper_bind_a_a_heaven.mp4 */; };
+		40AC6AC424518D1D00EFF78F /* viper_bind_a_b_point.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6ABF24518D1D00EFF78F /* viper_bind_a_b_point.mp4 */; };
+		40AC6ACA24518D2B00EFF78F /* viper_split_a_a_heaven.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AC524518D2B00EFF78F /* viper_split_a_a_heaven.mp4 */; };
+		40AC6ACB24518D2B00EFF78F /* viper_split_a_mid_wall.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AC624518D2B00EFF78F /* viper_split_a_mid_wall.mp4 */; };
+		40AC6ACC24518D2B00EFF78F /* viper_split_a_b_heaven.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AC724518D2B00EFF78F /* viper_split_a_b_heaven.mp4 */; };
+		40AC6ACD24518D2B00EFF78F /* viper_split_a_wall_smoke.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AC824518D2B00EFF78F /* viper_split_a_wall_smoke.mp4 */; };
+		40AC6ACE24518D2B00EFF78F /* viper_split_a_b_heaven_rafters.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AC924518D2B00EFF78F /* viper_split_a_b_heaven_rafters.mp4 */; };
+		40AC6AD824518D3E00EFF78F /* viper_haven_a_a_back.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6ACF24518D3D00EFF78F /* viper_haven_a_a_back.mp4 */; };
+		40AC6AD924518D3E00EFF78F /* viper_haven_a_c_point.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AD024518D3D00EFF78F /* viper_haven_a_c_point.mp4 */; };
+		40AC6ADA24518D3E00EFF78F /* viper_haven_a_a_long.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AD124518D3D00EFF78F /* viper_haven_a_a_long.mp4 */; };
+		40AC6ADB24518D3E00EFF78F /* viper_haven_a_a_heaven.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AD224518D3D00EFF78F /* viper_haven_a_a_heaven.mp4 */; };
+		40AC6ADC24518D3E00EFF78F /* viper_haven_a_a_wall_smoke.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AD324518D3D00EFF78F /* viper_haven_a_a_wall_smoke.mp4 */; };
+		40AC6ADD24518D3E00EFF78F /* viper_haven_a_a_ult.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AD424518D3E00EFF78F /* viper_haven_a_a_ult.mp4 */; };
+		40AC6ADE24518D3E00EFF78F /* viper_haven_a_c_point_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AD524518D3E00EFF78F /* viper_haven_a_c_point_2.mp4 */; };
+		40AC6ADF24518D3E00EFF78F /* viper_haven_a_a_execute.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AD624518D3E00EFF78F /* viper_haven_a_a_execute.mp4 */; };
+		40AC6AE024518D3E00EFF78F /* viper_haven_d_c_spawn.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AD724518D3E00EFF78F /* viper_haven_d_c_spawn.mp4 */; };
+		40AC6AE1245190F400EFF78F /* sova_haven_a_a_back.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AB0245181B000EFF78F /* sova_haven_a_a_back.mp4 */; };
+		40AC6AE2245190F400EFF78F /* sova_haven_a_a_long.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AB4245181B000EFF78F /* sova_haven_a_a_long.mp4 */; };
+		40AC6AE3245190F400EFF78F /* sova_haven_a_a_roof.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AB1245181B000EFF78F /* sova_haven_a_a_roof.mp4 */; };
+		40AC6AE4245190F400EFF78F /* sova_haven_a_c_plant.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AB3245181B000EFF78F /* sova_haven_a_c_plant.mp4 */; };
+		40AC6AE5245190F400EFF78F /* sova_haven_a_d_a_plant.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AB2245181B000EFF78F /* sova_haven_a_d_a_plant.mp4 */; };
+		40AC6AE6245190F400EFF78F /* sova_haven_a_d_b_plant.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AAC245181B000EFF78F /* sova_haven_a_d_b_plant.mp4 */; };
+		40AC6AE7245190F400EFF78F /* sova_haven_a_garage.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AAE245181B000EFF78F /* sova_haven_a_garage.mp4 */; };
+		40AC6AE8245190F400EFF78F /* sova_haven_a_outside.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AB5245181B000EFF78F /* sova_haven_a_outside.mp4 */; };
+		40AC6AE9245190F400EFF78F /* sova_haven_d_a_spawn.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AAD245181B000EFF78F /* sova_haven_d_a_spawn.mp4 */; };
+		40AC6AEA245190F400EFF78F /* sova_haven_d_c_plant.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AAF245181B000EFF78F /* sova_haven_d_c_plant.mp4 */; };
+		40AC6AEB245190F400EFF78F /* sova_haven_d_garage_lobby.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40AC6AB6245181B000EFF78F /* sova_haven_d_garage_lobby.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,8 +78,36 @@
 		401C38EC24501C1E0041F7AA /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		401C38F024501E320041F7AA /* VideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailView.swift; sourceTree = "<group>"; };
 		401C38F3245024FA0041F7AA /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		401C38F52450266E0041F7AA /* Cats.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cats.mp4; sourceTree = "<group>"; };
-		401C38F7245029A40041F7AA /* Snipe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Snipe.mp4; sourceTree = "<group>"; };
+		40AC6AAC245181B000EFF78F /* sova_haven_a_d_b_plant.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sova_haven_a_d_b_plant.mp4; sourceTree = "<group>"; };
+		40AC6AAD245181B000EFF78F /* sova_haven_d_a_spawn.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sova_haven_d_a_spawn.mp4; sourceTree = "<group>"; };
+		40AC6AAE245181B000EFF78F /* sova_haven_a_garage.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sova_haven_a_garage.mp4; sourceTree = "<group>"; };
+		40AC6AAF245181B000EFF78F /* sova_haven_d_c_plant.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sova_haven_d_c_plant.mp4; sourceTree = "<group>"; };
+		40AC6AB0245181B000EFF78F /* sova_haven_a_a_back.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sova_haven_a_a_back.mp4; sourceTree = "<group>"; };
+		40AC6AB1245181B000EFF78F /* sova_haven_a_a_roof.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sova_haven_a_a_roof.mp4; sourceTree = "<group>"; };
+		40AC6AB2245181B000EFF78F /* sova_haven_a_d_a_plant.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sova_haven_a_d_a_plant.mp4; sourceTree = "<group>"; };
+		40AC6AB3245181B000EFF78F /* sova_haven_a_c_plant.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sova_haven_a_c_plant.mp4; sourceTree = "<group>"; };
+		40AC6AB4245181B000EFF78F /* sova_haven_a_a_long.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sova_haven_a_a_long.mp4; sourceTree = "<group>"; };
+		40AC6AB5245181B000EFF78F /* sova_haven_a_outside.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sova_haven_a_outside.mp4; sourceTree = "<group>"; };
+		40AC6AB6245181B000EFF78F /* sova_haven_d_garage_lobby.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sova_haven_d_garage_lobby.mp4; sourceTree = "<group>"; };
+		40AC6ABB24518D1D00EFF78F /* viper_bind_a_a_point_wall.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_bind_a_a_point_wall.mp4; sourceTree = "<group>"; };
+		40AC6ABC24518D1D00EFF78F /* viper_bind_a_b_wall_smoke.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_bind_a_b_wall_smoke.mp4; sourceTree = "<group>"; };
+		40AC6ABD24518D1D00EFF78F /* viper_bind_a_a_heaven_wall.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_bind_a_a_heaven_wall.mp4; sourceTree = "<group>"; };
+		40AC6ABE24518D1D00EFF78F /* viper_bind_a_a_heaven.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_bind_a_a_heaven.mp4; sourceTree = "<group>"; };
+		40AC6ABF24518D1D00EFF78F /* viper_bind_a_b_point.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_bind_a_b_point.mp4; sourceTree = "<group>"; };
+		40AC6AC524518D2B00EFF78F /* viper_split_a_a_heaven.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_split_a_a_heaven.mp4; sourceTree = "<group>"; };
+		40AC6AC624518D2B00EFF78F /* viper_split_a_mid_wall.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_split_a_mid_wall.mp4; sourceTree = "<group>"; };
+		40AC6AC724518D2B00EFF78F /* viper_split_a_b_heaven.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_split_a_b_heaven.mp4; sourceTree = "<group>"; };
+		40AC6AC824518D2B00EFF78F /* viper_split_a_wall_smoke.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_split_a_wall_smoke.mp4; sourceTree = "<group>"; };
+		40AC6AC924518D2B00EFF78F /* viper_split_a_b_heaven_rafters.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_split_a_b_heaven_rafters.mp4; sourceTree = "<group>"; };
+		40AC6ACF24518D3D00EFF78F /* viper_haven_a_a_back.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_haven_a_a_back.mp4; sourceTree = "<group>"; };
+		40AC6AD024518D3D00EFF78F /* viper_haven_a_c_point.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_haven_a_c_point.mp4; sourceTree = "<group>"; };
+		40AC6AD124518D3D00EFF78F /* viper_haven_a_a_long.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_haven_a_a_long.mp4; sourceTree = "<group>"; };
+		40AC6AD224518D3D00EFF78F /* viper_haven_a_a_heaven.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_haven_a_a_heaven.mp4; sourceTree = "<group>"; };
+		40AC6AD324518D3D00EFF78F /* viper_haven_a_a_wall_smoke.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_haven_a_a_wall_smoke.mp4; sourceTree = "<group>"; };
+		40AC6AD424518D3E00EFF78F /* viper_haven_a_a_ult.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_haven_a_a_ult.mp4; sourceTree = "<group>"; };
+		40AC6AD524518D3E00EFF78F /* viper_haven_a_c_point_2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_haven_a_c_point_2.mp4; sourceTree = "<group>"; };
+		40AC6AD624518D3E00EFF78F /* viper_haven_a_a_execute.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_haven_a_a_execute.mp4; sourceTree = "<group>"; };
+		40AC6AD724518D3E00EFF78F /* viper_haven_d_c_spawn.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = viper_haven_d_c_spawn.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,8 +190,7 @@
 		401C38E1244F60670041F7AA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				401C38F7245029A40041F7AA /* Snipe.mp4 */,
-				401C38F52450266E0041F7AA /* Cats.mp4 */,
+				40AC6AA724517ED400EFF78F /* Videos */,
 				401C38DF244F60640041F7AA /* data.json */,
 			);
 			path = Resources;
@@ -147,6 +202,91 @@
 				401C38F3245024FA0041F7AA /* Utility.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		40AC6AA724517ED400EFF78F /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				40AC6AB724518CC900EFF78F /* Viper */,
+				40AC6AA824517ED900EFF78F /* Sova */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
+		40AC6AA824517ED900EFF78F /* Sova */ = {
+			isa = PBXGroup;
+			children = (
+				40AC6AA924517EDF00EFF78F /* Haven */,
+			);
+			path = Sova;
+			sourceTree = "<group>";
+		};
+		40AC6AA924517EDF00EFF78F /* Haven */ = {
+			isa = PBXGroup;
+			children = (
+				40AC6AB0245181B000EFF78F /* sova_haven_a_a_back.mp4 */,
+				40AC6AB4245181B000EFF78F /* sova_haven_a_a_long.mp4 */,
+				40AC6AB1245181B000EFF78F /* sova_haven_a_a_roof.mp4 */,
+				40AC6AB3245181B000EFF78F /* sova_haven_a_c_plant.mp4 */,
+				40AC6AB2245181B000EFF78F /* sova_haven_a_d_a_plant.mp4 */,
+				40AC6AAC245181B000EFF78F /* sova_haven_a_d_b_plant.mp4 */,
+				40AC6AAE245181B000EFF78F /* sova_haven_a_garage.mp4 */,
+				40AC6AB5245181B000EFF78F /* sova_haven_a_outside.mp4 */,
+				40AC6AAD245181B000EFF78F /* sova_haven_d_a_spawn.mp4 */,
+				40AC6AAF245181B000EFF78F /* sova_haven_d_c_plant.mp4 */,
+				40AC6AB6245181B000EFF78F /* sova_haven_d_garage_lobby.mp4 */,
+			);
+			path = Haven;
+			sourceTree = "<group>";
+		};
+		40AC6AB724518CC900EFF78F /* Viper */ = {
+			isa = PBXGroup;
+			children = (
+				40AC6ABA24518D0900EFF78F /* Bind */,
+				40AC6AB924518D0300EFF78F /* Split */,
+				40AC6AB824518CCD00EFF78F /* Haven */,
+			);
+			path = Viper;
+			sourceTree = "<group>";
+		};
+		40AC6AB824518CCD00EFF78F /* Haven */ = {
+			isa = PBXGroup;
+			children = (
+				40AC6ACF24518D3D00EFF78F /* viper_haven_a_a_back.mp4 */,
+				40AC6AD624518D3E00EFF78F /* viper_haven_a_a_execute.mp4 */,
+				40AC6AD224518D3D00EFF78F /* viper_haven_a_a_heaven.mp4 */,
+				40AC6AD124518D3D00EFF78F /* viper_haven_a_a_long.mp4 */,
+				40AC6AD424518D3E00EFF78F /* viper_haven_a_a_ult.mp4 */,
+				40AC6AD324518D3D00EFF78F /* viper_haven_a_a_wall_smoke.mp4 */,
+				40AC6AD524518D3E00EFF78F /* viper_haven_a_c_point_2.mp4 */,
+				40AC6AD024518D3D00EFF78F /* viper_haven_a_c_point.mp4 */,
+				40AC6AD724518D3E00EFF78F /* viper_haven_d_c_spawn.mp4 */,
+			);
+			path = Haven;
+			sourceTree = "<group>";
+		};
+		40AC6AB924518D0300EFF78F /* Split */ = {
+			isa = PBXGroup;
+			children = (
+				40AC6AC524518D2B00EFF78F /* viper_split_a_a_heaven.mp4 */,
+				40AC6AC924518D2B00EFF78F /* viper_split_a_b_heaven_rafters.mp4 */,
+				40AC6AC724518D2B00EFF78F /* viper_split_a_b_heaven.mp4 */,
+				40AC6AC624518D2B00EFF78F /* viper_split_a_mid_wall.mp4 */,
+				40AC6AC824518D2B00EFF78F /* viper_split_a_wall_smoke.mp4 */,
+			);
+			path = Split;
+			sourceTree = "<group>";
+		};
+		40AC6ABA24518D0900EFF78F /* Bind */ = {
+			isa = PBXGroup;
+			children = (
+				40AC6ABD24518D1D00EFF78F /* viper_bind_a_a_heaven_wall.mp4 */,
+				40AC6ABE24518D1D00EFF78F /* viper_bind_a_a_heaven.mp4 */,
+				40AC6ABB24518D1D00EFF78F /* viper_bind_a_a_point_wall.mp4 */,
+				40AC6ABF24518D1D00EFF78F /* viper_bind_a_b_point.mp4 */,
+				40AC6ABC24518D1D00EFF78F /* viper_bind_a_b_wall_smoke.mp4 */,
+			);
+			path = Bind;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,12 +347,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40AC6AE1245190F400EFF78F /* sova_haven_a_a_back.mp4 in Resources */,
+				40AC6ACA24518D2B00EFF78F /* viper_split_a_a_heaven.mp4 in Resources */,
+				40AC6AEB245190F400EFF78F /* sova_haven_d_garage_lobby.mp4 in Resources */,
+				40AC6ACC24518D2B00EFF78F /* viper_split_a_b_heaven.mp4 in Resources */,
+				40AC6ACD24518D2B00EFF78F /* viper_split_a_wall_smoke.mp4 in Resources */,
+				40AC6AE5245190F400EFF78F /* sova_haven_a_d_a_plant.mp4 in Resources */,
+				40AC6AE2245190F400EFF78F /* sova_haven_a_a_long.mp4 in Resources */,
+				40AC6AEA245190F400EFF78F /* sova_haven_d_c_plant.mp4 in Resources */,
+				40AC6AC424518D1D00EFF78F /* viper_bind_a_b_point.mp4 in Resources */,
+				40AC6ADE24518D3E00EFF78F /* viper_haven_a_c_point_2.mp4 in Resources */,
+				40AC6AE7245190F400EFF78F /* sova_haven_a_garage.mp4 in Resources */,
+				40AC6AE4245190F400EFF78F /* sova_haven_a_c_plant.mp4 in Resources */,
+				40AC6AE3245190F400EFF78F /* sova_haven_a_a_roof.mp4 in Resources */,
+				40AC6ADF24518D3E00EFF78F /* viper_haven_a_a_execute.mp4 in Resources */,
+				40AC6AE9245190F400EFF78F /* sova_haven_d_a_spawn.mp4 in Resources */,
+				40AC6AE8245190F400EFF78F /* sova_haven_a_outside.mp4 in Resources */,
+				40AC6AC324518D1D00EFF78F /* viper_bind_a_a_heaven.mp4 in Resources */,
 				401C38D0244F40F40041F7AA /* LaunchScreen.storyboard in Resources */,
+				40AC6AE6245190F400EFF78F /* sova_haven_a_d_b_plant.mp4 in Resources */,
+				40AC6ACB24518D2B00EFF78F /* viper_split_a_mid_wall.mp4 in Resources */,
+				40AC6ACE24518D2B00EFF78F /* viper_split_a_b_heaven_rafters.mp4 in Resources */,
 				401C38CD244F40F40041F7AA /* Preview Assets.xcassets in Resources */,
+				40AC6ADA24518D3E00EFF78F /* viper_haven_a_a_long.mp4 in Resources */,
+				40AC6ADB24518D3E00EFF78F /* viper_haven_a_a_heaven.mp4 in Resources */,
+				40AC6AC124518D1D00EFF78F /* viper_bind_a_b_wall_smoke.mp4 in Resources */,
+				40AC6AD924518D3E00EFF78F /* viper_haven_a_c_point.mp4 in Resources */,
+				40AC6ADD24518D3E00EFF78F /* viper_haven_a_a_ult.mp4 in Resources */,
 				401C38CA244F40F40041F7AA /* Assets.xcassets in Resources */,
+				40AC6AD824518D3E00EFF78F /* viper_haven_a_a_back.mp4 in Resources */,
+				40AC6AE024518D3E00EFF78F /* viper_haven_d_c_spawn.mp4 in Resources */,
+				40AC6AC024518D1D00EFF78F /* viper_bind_a_a_point_wall.mp4 in Resources */,
 				401C38E0244F60640041F7AA /* data.json in Resources */,
-				401C38F62450266E0041F7AA /* Cats.mp4 in Resources */,
-				401C38F8245029A50041F7AA /* Snipe.mp4 in Resources */,
+				40AC6ADC24518D3E00EFF78F /* viper_haven_a_a_wall_smoke.mp4 in Resources */,
+				40AC6AC224518D1D00EFF78F /* viper_bind_a_a_heaven_wall.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
