@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Topic title",
+        "id": 1,
+        "subTopics": [
+            {
+                "id": 101,
+                "title": "Subtopic 1",
+                "videos": [
+                    {
+                        "id": 10101,
+                        "title": "Video 1",
+                        "url": "local:video2"
+                    },
+                    {
+                        "id": 10102,
+                        "title": "Video 2",
+                        "url": "local:video1"
+                    },
+                    {
+                        "id": 10103,
+                        "title": "Video 3",
+                        "url": "https://google.com"
+                    }
+                ]
+            },
+            {
+                "id": 102,
+                "title": "Subtopic 2",
+                "videos": [
+                    {
+                        "id": 10201,
+                        "title": "Video 1",
+                        "url": "https://google.com"
+                    },
+                    {
+                        "id": 10202,
+                        "title": "Video 2",
+                        "url": "https://google.com"
+                    },
+                    {
+                        "id": 10203,
+                        "title": "Video 3",
+                        "url": "https://google.com"
+                    }
+                ]
+            }
+        ]
+    }
+]
