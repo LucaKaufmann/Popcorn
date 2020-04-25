@@ -10,7 +10,7 @@ import SwiftUI
 
 struct VideoDetailView: View {
     
-    @State var videoFile: String
+    @State var videoFile: Video
     
     var body: some View {
         VideoView(videoFile: videoFile)
@@ -19,6 +19,6 @@ struct VideoDetailView: View {
 
 struct VideoDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        VideoDetailView(videoFile: "Cats")
+        VideoDetailView(videoFile: topicsData[0].subTopics[0].videos[0])
     }
 }

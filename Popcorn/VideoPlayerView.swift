@@ -189,10 +189,12 @@ struct VideoPlayerContainerView : View {
     
     private let player: AVPlayer
   
-    init(url: URL) {
-        print("URL: \(url.relativeString)")
-        player = AVPlayer(url: url)
-        videoUrl = url.absoluteString
+    init(video: Video) {
+        print("URL: \(video.url)")
+        player = AVPlayer()
+        videoUrl = video.url
+        
+        setVideo(video: video)
     }
   
     var body: some View {
@@ -211,27 +213,34 @@ struct VideoPlayerContainerView : View {
             self.player.replaceCurrentItem(with: nil)
         }
     }
+    
+    func setVideo(video: Video) {
+        if video.url.contains("youtube") {
+            let y = YoutubeDirectLinkExtractor()
+            y.extractInfo(for: .urlString(video.url), success: { info in
+                    let youtubeUrl = URL(string: info.highestQualityPlayableLink ?? "")!
+                    self.player.replaceCurrentItem(with: AVPlayerItem(url: youtubeUrl))
+                }, failure: { error in
+                    print(error)
+                })
+        } else {
+            var videoUrl = URL(string: video.url)!
+            if videoUrl.absoluteString.contains("local:") {
+                let videoName = videoUrl.absoluteString.replacingOccurrences(of: "local:", with: "")
+                print("Getting url for video name: \(videoName)")
+                videoUrl = Bundle.main.url(forResource: videoName, withExtension: "mp4")!
+            }
+            player.replaceCurrentItem(with: AVPlayerItem(url: videoUrl))
+        }
+    }
 }
 
 // This is the main SwiftUI view for this app, containing a single PlayerContainerView
 struct VideoView: View {
-    var videoFile: String
+    var videoFile: Video
     var body: some View {
 //        VideoPlayerContainerView(url: URL(string: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8")!)
         
-        VideoPlayerContainerView(url: getFileUrl(name: videoFile))
-    }
-    
-    func getFileUrl(name: String) -> URL {
-        print("Video file: \(name)")
-        if name.contains("local:") {
-            let videoName = name.replacingOccurrences(of: "local:", with: "")
-            print("Getting url for video name: \(videoName)")
-            return Bundle.main.url(forResource: videoName, withExtension: "mp4")!
-
-        } else {
-            return URL(string: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8")!
-        }
-
+        VideoPlayerContainerView(video: videoFile)
     }
 }

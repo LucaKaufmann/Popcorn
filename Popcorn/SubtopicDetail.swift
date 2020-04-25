@@ -14,7 +14,7 @@ struct SubtopicDetail: View {
     var body: some View {
         VStack {
             List(subTopic.videos) { video in
-                NavigationLink(destination: VideoDetailView(videoFile: video.url)) {
+                NavigationLink(destination: VideoDetailView(videoFile: video)) {
                     Text(video.title)
                 }
                 

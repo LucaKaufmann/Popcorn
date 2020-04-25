@@ -19,7 +19,11 @@ class Utility: NSObject {
     }()
     
     static func formatSecondsToHMS(_ seconds: Double) -> String {
-        return timeHMSFormatter.string(from: seconds) ?? "00:00"
+        if seconds > 0.0 {
+            return timeHMSFormatter.string(from: seconds) ?? "00:00"
+        } else {
+            return "00:00"
+        }
     }
     
 }
