@@ -223,15 +223,16 @@ struct VideoPlayerContainerView : View {
                 }, failure: { error in
                     print(error)
                 })
+        } else if video.url.contains("local:") {
+            let videoName = video.url.replacingOccurrences(of: "local:", with: "")
+            print("Getting url for video name: \(videoName)")
+            let videoUrl = Bundle.main.url(forResource: videoName, withExtension: "mp4")!
+            player.replaceCurrentItem(with: AVPlayerItem(url: videoUrl))
         } else {
-            var videoUrl = URL(string: video.url)!
-            if videoUrl.absoluteString.contains("local:") {
-                let videoName = videoUrl.absoluteString.replacingOccurrences(of: "local:", with: "")
-                print("Getting url for video name: \(videoName)")
-                videoUrl = Bundle.main.url(forResource: videoName, withExtension: "mp4")!
-            }
+            let videoUrl = URL(string: video.url)!
             player.replaceCurrentItem(with: AVPlayerItem(url: videoUrl))
         }
+        
     }
 }
 
