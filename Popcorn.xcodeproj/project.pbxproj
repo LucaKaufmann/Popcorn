@@ -62,6 +62,8 @@
 		40AC6AF92454567E00EFF78F /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AC6AF32454567E00EFF78F /* VideoInfo.swift */; };
 		40AC6AFA2454567E00EFF78F /* YoutubeDirectLinkExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AC6AF42454567E00EFF78F /* YoutubeDirectLinkExtractor.swift */; };
 		40AC6AFB2454567E00EFF78F /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AC6AF52454567E00EFF78F /* Errors.swift */; };
+		8107C7582456AFFD00812FEB /* PlayerTimeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8107C7572456AFFD00812FEB /* PlayerTimeObserver.swift */; };
+		8107C75A2456C88400812FEB /* AVPlayer+isPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8107C7592456C88400812FEB /* AVPlayer+isPlaying.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +124,8 @@
 		40AC6AF32454567E00EFF78F /* VideoInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
 		40AC6AF42454567E00EFF78F /* YoutubeDirectLinkExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeDirectLinkExtractor.swift; sourceTree = "<group>"; };
 		40AC6AF52454567E00EFF78F /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		8107C7572456AFFD00812FEB /* PlayerTimeObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTimeObserver.swift; sourceTree = "<group>"; };
+		8107C7592456C88400812FEB /* AVPlayer+isPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+isPlaying.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				401C38F3245024FA0041F7AA /* Utility.swift */,
+				8107C7572456AFFD00812FEB /* PlayerTimeObserver.swift */,
+				8107C7592456C88400812FEB /* AVPlayer+isPlaying.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -445,8 +451,10 @@
 				401C38EB244F683B0041F7AA /* Video.swift in Sources */,
 				401C38C8244F40F00041F7AA /* ContentView.swift in Sources */,
 				401C38E5244F645E0041F7AA /* TopicDetail.swift in Sources */,
+				8107C75A2456C88400812FEB /* AVPlayer+isPlaying.swift in Sources */,
 				40AC6AFB2454567E00EFF78F /* Errors.swift in Sources */,
 				401C38E3244F63280041F7AA /* SubTopic.swift in Sources */,
+				8107C7582456AFFD00812FEB /* PlayerTimeObserver.swift in Sources */,
 				401C38ED24501C1E0041F7AA /* VideoPlayerView.swift in Sources */,
 				40AC6AF82454567E00EFF78F /* ExtractionSource.swift in Sources */,
 			);

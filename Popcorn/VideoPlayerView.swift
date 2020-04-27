@@ -114,11 +114,18 @@ struct VideoPlayerView: UIViewRepresentable {
 
 // This is the SwiftUI view that contains the controls for the player
 struct VideoPlayerControlsView : View {
-    @Binding private(set) var videoPos: Double
-    @Binding private(set) var videoDuration: Double
-    @Binding private(set) var seeking: Bool
-    
+    private enum PlaybackState: Int {
+        case waitingForSelection
+        case buffering
+        case playing
+    }
     let player: AVPlayer
+    let timeObserver: PlayerTimeObserver
+    let durationObserver: PlayerDurationObserver
+    let itemObserver: PlayerItemObserver
+    @State private var currentTime: TimeInterval = 0
+    @State private var currentDuration: TimeInterval = 0
+    @State private var state = PlaybackState.waitingForSelection
     
     @State private var playerPaused = true
     
@@ -130,14 +137,40 @@ struct VideoPlayerControlsView : View {
                     .padding(.trailing, 10)
             }
             // Current video time
-            Text("\(Utility.formatSecondsToHMS(videoPos * videoDuration))")
+//            Text("\(Utility.formatSecondsToHMS(currentTime))")
             // Slider for seeking / showing video progress
-            Slider(value: $videoPos, in: 0...1, onEditingChanged: sliderEditingChanged)
+            Slider(value: $currentTime,
+                   in: 0...currentDuration,
+                   onEditingChanged: sliderEditingChanged,
+                   minimumValueLabel: Text("\(Utility.formatSecondsToHMS(currentTime))"),
+                   maximumValueLabel: Text("\(Utility.formatSecondsToHMS(currentDuration))")) {
+                    // I have no idea in what scenario this View is shown...
+                    Text("seek/progress slider")
+            }
+            .disabled(state != .playing)
             // Video duration
-            Text("\(Utility.formatSecondsToHMS(videoDuration))")
+//            Text("\(Utility.formatSecondsToHMS(currentDuration))")
         }
         .padding(.leading, 10)
         .padding(.trailing, 10)
+        .onReceive(timeObserver.publisher) { time in
+            // Update the local var
+            self.currentTime = time
+            if time > 0 {
+                 self.state = .playing
+             }
+        }
+        // Listen out for the duration observer publishing changes to the player's item duration
+        .onReceive(durationObserver.publisher) { duration in
+            // Update the local var
+            self.currentDuration = duration
+        }
+        // Listen out for the item observer publishing a change to whether the player has an item
+        .onReceive(itemObserver.publisher) { hasItem in
+            self.state = hasItem ? .buffering : .waitingForSelection
+            self.currentTime = 0
+            self.currentDuration = 0
+        }
     }
     
     private func togglePlayPause() {
@@ -158,17 +191,17 @@ struct VideoPlayerControlsView : View {
         if editingStarted {
             // Set a flag stating that we're seeking so the slider doesn't
             // get updated by the periodic time observer on the player
-            seeking = true
+//            seeking = true
             pausePlayer(true)
         }
         
         // Do the seek if we're finished
         if !editingStarted {
-            let targetTime = CMTime(seconds: videoPos * videoDuration,
+            let targetTime = CMTime(seconds: currentTime,
                                     preferredTimescale: 600)
             player.seek(to: targetTime) { _ in
                 // Now the seek is finished, resume normal operation
-                self.seeking = false
+//                self.seeking = false
                 self.pausePlayer(false)
             }
         }
@@ -203,10 +236,10 @@ struct VideoPlayerContainerView : View {
                             videoDuration: $videoDuration,
                             seeking: $seeking,
                             player: player)
-            VideoPlayerControlsView(videoPos: $videoPos,
-                                    videoDuration: $videoDuration,
-                                    seeking: $seeking,
-                                    player: player)
+            VideoPlayerControlsView(player: player,
+                                    timeObserver: PlayerTimeObserver(player: player),
+                                    durationObserver: PlayerDurationObserver(player: player),
+                                    itemObserver: PlayerItemObserver(player: player))
         }
         .onDisappear {
             // When this View isn't being shown anymore stop the player
@@ -245,3 +278,4 @@ struct VideoView: View {
         VideoPlayerContainerView(video: videoFile)
     }
 }
+

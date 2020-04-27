@@ -20,6 +20,10 @@ struct ContentView: View {
             }.navigationBarTitle(Text("Topics"))
         }
     }
+    
+    init() {
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
