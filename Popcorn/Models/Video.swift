@@ -12,4 +12,26 @@ struct Video: Hashable, Codable, Identifiable {
     var id: Int
     var title: String
     var url: String
+    
+    func getVideoUrl(completion: @escaping (URL?) -> ()) {
+        if url.contains("youtube") {
+            let y = YoutubeDirectLinkExtractor()
+            y.extractInfo(for: .urlString(url), success: { info in
+                    let youtubeUrl = URL(string: info.highestQualityPlayableLink ?? "")!
+                    completion(youtubeUrl)
+                }, failure: { error in
+                    print(error)
+                })
+        } else if url.contains("local:") {
+            let videoName = url.replacingOccurrences(of: "local:", with: "")
+            print("Getting url for video name: \(videoName)")
+            let videoUrl = Bundle.main.url(forResource: videoName, withExtension: "mp4")!
+            completion(videoUrl)
+        } else {
+            let videoUrl = URL(string: url)!
+            completion(videoUrl)
+        }
+        
+    }
+    
 }

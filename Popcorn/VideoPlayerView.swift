@@ -227,7 +227,9 @@ struct VideoPlayerContainerView : View {
         player = AVPlayer()
         videoUrl = video.url
         
-        setVideo(video: video)
+//        video.getVideoUrl(completion: { url in
+//            self.player.replaceCurrentItem(with: AVPlayerItem(url: url))
+//        })
     }
   
     var body: some View {

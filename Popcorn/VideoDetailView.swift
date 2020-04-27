@@ -72,23 +72,14 @@ struct AVPlayerView: UIViewControllerRepresentable {
             return
         }
         if let v = video {
-            if v.url.contains("youtube") {
-                let y = YoutubeDirectLinkExtractor()
-                y.extractInfo(for: .urlString(v.url), success: { info in
-                        let youtubeUrl = URL(string: info.highestQualityPlayableLink ?? "")!
-                        videoPlayer.replaceCurrentItem(with: AVPlayerItem(url: youtubeUrl))
-                    }, failure: { error in
-                        print(error)
-                    })
-            } else if v.url.contains("local:") {
-                let videoName = v.url.replacingOccurrences(of: "local:", with: "")
-                print("Getting url for video name: \(videoName)")
-                let videoUrl = Bundle.main.url(forResource: videoName, withExtension: "mp4")!
-                videoPlayer.replaceCurrentItem(with: AVPlayerItem(url: videoUrl))
-            } else {
-                let videoUrl = URL(string: v.url)!
-                videoPlayer.replaceCurrentItem(with: AVPlayerItem(url: videoUrl))
-            }
+            
+            v.getVideoUrl(completion: { url in
+                if let u = url {
+                    videoPlayer.replaceCurrentItem(with: AVPlayerItem(url: u))
+                } else {
+                    videoPlayer.replaceCurrentItem(with: nil)
+                }
+            })
             
             do {
                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
