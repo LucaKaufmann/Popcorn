@@ -13,21 +13,31 @@ struct SubtopicDetail: View {
     @State private var filter1 = true
     @State private var filter2 = true
     @State private var filter3 = true
+    @State private var filterIndex = 0
+    @State private var subfilterIndex = 0
     
     var subTopic: SubTopic
     var body: some View {
         VStack {
-            HStack {
-                if subTopic.hasFilter1 {
-                    Toggle(isOn: $filter1) {
-                        Text(subTopic.filters[0])
-                    }.padding()
+            VStack {
+                if subTopic.hasFilters {
+                    Picker("Filters", selection: $filterIndex) {
+                        ForEach(0 ..< subTopic.filters!.count) { index in
+                            Text(self.subTopic.filters![index]).tag(index)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
                 }
-                if subTopic.hasFilter2 {
-                    Toggle(isOn: $filter2) {
-                        Text(subTopic.filters[1])
-                    }.padding()
+                
+                if subTopic.hasSubFilters {
+                    Picker("Subfilters", selection: $subfilterIndex) {
+                        ForEach(0 ..< subTopic.subfilters!.count) { index in
+                            Text(self.subTopic.subfilters![index]).tag(index)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
                 }
+
             }
             
             List(getVideos()) { video in
@@ -40,17 +50,15 @@ struct SubtopicDetail: View {
     }
     
     func getVideos() -> [Video] {
-        var filters = [String]()
-        if subTopic.hasFilter1 && filter1 {
-            filters.append(subTopic.filters[0].lowercased())
-        }
-        if subTopic.hasFilter2 && filter2 {
-            filters.append(subTopic.filters[1].lowercased())
-        }
-        if filters.count == 0 || (filter1 && filter2) {
-            return subTopic.videos
+        
+        if subTopic.hasFilters && subTopic.hasSubFilters {
+            return subTopic.videosWith(filter: subTopic.filters![filterIndex].lowercased(), subfilter: subTopic.subfilters![subfilterIndex].lowercased())
+        } else if subTopic.hasFilters {
+            return subTopic.videosWith(filter: subTopic.filters![filterIndex].lowercased(), subfilter: "all")
+        } else if subTopic.hasSubFilters {
+            return subTopic.videosWith(filter: "all", subfilter: subTopic.subfilters![subfilterIndex].lowercased())
         } else {
-            return subTopic.videosWith(filters: filters)
+            return subTopic.videos
         }
         
     }
