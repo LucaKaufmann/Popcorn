@@ -10,7 +10,7 @@ import UIKit
 import SwiftUI
 import CoreLocation
 
-let topicsData: [Topic] = load("data.json")
+let appData: AppData = load("data.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

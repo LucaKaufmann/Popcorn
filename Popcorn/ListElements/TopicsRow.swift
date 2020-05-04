@@ -19,13 +19,13 @@ struct TopicsRow: View {
             }
             Spacer()
             Image(systemName: "book")
-        }.padding([.horizontal])
+            }.padding([.horizontal])
         
     }
 }
 
 struct TopicsRow_Previews: PreviewProvider {
     static var previews: some View {
-        TopicsRow(topic: topicsData[0])
+        TopicsRow(topic: appData.topics[0])
     }
 }

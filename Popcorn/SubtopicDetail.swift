@@ -36,13 +36,16 @@ struct SubtopicDetail: View {
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
+                    
                 }
 
-            }
+            }.background(Color(hex: appData.backgroundColor))
             
-            List(getVideos()) { video in
-                NavigationLink(destination: VideoDetailView(videoFile: video)) {
-                    Text(video.title)
+            List {
+                ForEach(getVideos()) { video in
+                    NavigationLink(destination: VideoDetailView(videoFile: video)) {
+                        Text(video.title)
+                    }.listRowBackground(Color(hex: appData.backgroundColor))
                 }
                 
             }
@@ -66,6 +69,6 @@ struct SubtopicDetail: View {
 
 struct SubtopicDetail_Previews: PreviewProvider {
     static var previews: some View {
-        SubtopicDetail(subTopic: topicsData[0].subTopics[0])
+        SubtopicDetail(subTopic: appData.topics[0].subTopics[0])
     }
 }
