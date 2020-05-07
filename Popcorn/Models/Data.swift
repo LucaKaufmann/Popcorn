@@ -34,6 +34,20 @@ func load<T: Decodable>(_ filename: String) -> T {
     }
 }
 
+func downloadFile(url: String) {
+    let url = URL(string: url)!
+
+    let task = URLSession.shared.downloadTask(with: url) { localURL, urlResponse, error in
+        if let localURL = localURL {
+            if let string = try? String(contentsOf: localURL) {
+                print(string)
+            }
+        }
+    }
+
+    task.resume()
+}
+
 final class ImageStore {
     typealias _ImageDictionary = [String: CGImage]
     fileprivate var images: _ImageDictionary = [:]
