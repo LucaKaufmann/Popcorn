@@ -24,7 +24,6 @@ struct Video: Hashable, Codable, Identifiable {
                     print(error)
                 })
         } else if url.contains("youtu") {
-            
             let s = url.replacingOccurrences(of: "https://youtu.be/", with: "https://www.youtube.com/watch?v=")
             let y = YoutubeDirectLinkExtractor()
             y.extractInfo(for: .urlString(s), success: { info in
