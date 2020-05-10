@@ -258,6 +258,15 @@ struct VideoPlayerContainerView : View {
                 }, failure: { error in
                     print(error)
                 })
+        } else if video.url.contains("youtu") {
+            let s = video.url.replacingOccurrences(of: "https://youtu.be/", with: "https://www.youtube.com/watch?v=")
+            let y = YoutubeDirectLinkExtractor()
+            y.extractInfo(for: .urlString(s), success: { info in
+                    let youtubeUrl = URL(string: info.highestQualityPlayableLink ?? "")!
+                    self.player.replaceCurrentItem(with: AVPlayerItem(url: youtubeUrl))
+                }, failure: { error in
+                    print(error)
+                })
         } else if video.url.contains("local:") {
             let videoName = video.url.replacingOccurrences(of: "local:", with: "")
             print("Getting url for video name: \(videoName)")
