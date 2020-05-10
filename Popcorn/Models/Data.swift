@@ -10,9 +10,40 @@ import UIKit
 import SwiftUI
 import CoreLocation
 
-let appData: AppData = load("data.json")
+var appData: AppData = load("data.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
+    
+    let fileManager = FileManager.default
+    let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+    let fileURL = documentsURL.appendingPathComponent(filename)
+    if fileManager.fileExists(atPath: fileURL.path) {
+        return decodeFile(filename: filename, url: fileURL)
+    } else {
+        return loadDefault(filename, url: fileURL)
+    }
+}
+
+func decodeFile<T: Decodable>(filename: String, url: URL) -> T {
+    let data: Data
+    print("Decoding file \(url.absoluteString)")
+    do {
+        data = try Data(contentsOf: url)
+    } catch {
+        fatalError("Couldn't load file from main bundle:\n\(error)")
+    }
+    do {
+        let decoder = JSONDecoder()
+        return try decoder.decode(T.self, from: data)
+    } catch {
+        print("Couldn't parse file as \(T.self):\n\(error)")
+        let fileManager = FileManager.default
+        try? fileManager.removeItem(at: url)
+        return loadDefault(filename, url: url)
+    }
+}
+
+func loadDefault<T: Decodable>(_ filename: String, url: URL) -> T {
     let data: Data
     
     guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
@@ -23,28 +54,57 @@ func load<T: Decodable>(_ filename: String) -> T {
     do {
         data = try Data(contentsOf: file)
     } catch {
-        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+        fatalError("Couldn't load file from main bundle:\n\(error)")
     }
     
     do {
-        let decoder = JSONDecoder()
-        return try decoder.decode(T.self, from: data)
+        try data.write(to: url, options: .atomic)
+        print("Saved file to \(url.absoluteString)")
     } catch {
-        fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+        print("Error writing file \(error)")
     }
+    
+    return decodeFile(filename: filename, url: file)
 }
 
+//func downloadFile(url: String) {
+//    let url = URL(string: url)!
+//
+//    let task = URLSession.shared.downloadTask(with: url) { localURL, urlResponse, error in
+//        if let localURL = localURL {
+//            if let string = try? String(contentsOf: localURL) {
+//                print(localURL)
+//            }
+//        }
+//    }
+//
+//    task.resume()
+//}\
+
 func downloadFile(url: String) {
-    let url = URL(string: url)!
+    let url:URL = URL(string: url)!
+    let session = URLSession.shared
 
-    let task = URLSession.shared.downloadTask(with: url) { localURL, urlResponse, error in
-        if let localURL = localURL {
-            if let string = try? String(contentsOf: localURL) {
-                print(string)
-            }
+    let request = NSMutableURLRequest(url: url)
+    request.httpMethod = "GET"
+    request.cachePolicy = URLRequest.CachePolicy.reloadIgnoringCacheData
+
+
+    let task = session.dataTask(with: request as URLRequest, completionHandler: {
+        (
+        data, response, error) in
+
+        guard let _:Data = data, let _:URLResponse = response  , error == nil else {
+
+            return
         }
-    }
-
+        let fileManager = FileManager.default
+        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentsURL.appendingPathComponent("data.json")
+        do {
+            try data?.write(to: fileURL, options: .atomic)
+        } catch { }
+    })
     task.resume()
 }
 
