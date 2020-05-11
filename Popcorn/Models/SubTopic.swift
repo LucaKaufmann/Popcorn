@@ -46,4 +46,8 @@ struct SubTopic: Hashable, Codable, Identifiable {
         }
         return filteredVideos
     }
+    
+    func contains(tag: String) -> Bool {
+        return subfilters?.contains(tag) ?? false
+    }
 }

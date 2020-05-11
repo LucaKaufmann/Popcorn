@@ -18,6 +18,8 @@ struct SubtopicDetail: View {
     @EnvironmentObject var dataManager: DataManager
     
     var subTopic: SubTopic
+    var topic: Topic
+    
     var body: some View {
         VStack {
             VStack {
@@ -45,7 +47,7 @@ struct SubtopicDetail: View {
             List {
                 ForEach(getVideos()) { video in
                     NavigationLink(destination: VideoDetailView(videoFile: video)) {
-                        Text(video.title)
+                        VideoRow(video: video, topic: self.topic, subTopic: self.subTopic)
                     }.listRowBackground(Color(hex: self.dataManager.appData.backgroundColor))
                 }
                 
@@ -70,6 +72,6 @@ struct SubtopicDetail: View {
 
 struct SubtopicDetail_Previews: PreviewProvider {
     static var previews: some View {
-        SubtopicDetail(subTopic: previewData.topics[0].subTopics[0])
+        SubtopicDetail(subTopic: previewData.topics[0].subTopics[0], topic: previewData.topics[0])
     }
 }

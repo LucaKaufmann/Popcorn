@@ -16,7 +16,7 @@ struct TopicDetail: View {
          VStack {
             List {
                 ForEach(topic.subTopics) { subtopic in
-                    NavigationLink(destination: SubtopicDetail(subTopic: subtopic)) {
+                    NavigationLink(destination: SubtopicDetail(subTopic: subtopic, topic: self.topic)) {
                         Text(subtopic.title)
                     }.listRowBackground(Color(hex: self.dataManager.appData.backgroundColor))
                 }

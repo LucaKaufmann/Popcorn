@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "81E51DF42469242300077AA8"
-               BuildableName = "Setups.app"
+               BuildableName = "Valorant Setups.app"
                BlueprintName = "Setups"
                ReferencedContainer = "container:Popcorn.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "81E51DF42469242300077AA8"
-            BuildableName = "Setups.app"
+            BuildableName = "Valorant Setups.app"
             BlueprintName = "Setups"
             ReferencedContainer = "container:Popcorn.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "81E51DF42469242300077AA8"
-            BuildableName = "Setups.app"
+            BuildableName = "Valorant Setups.app"
             BlueprintName = "Setups"
             ReferencedContainer = "container:Popcorn.xcodeproj">
          </BuildableReference>
