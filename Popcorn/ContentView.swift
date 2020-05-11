@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
+    @EnvironmentObject var dataManager: DataManager
     
     var body: some View {
         NavigationView {
@@ -17,21 +18,26 @@ struct ContentView: View {
                 Color.purple.edgesIgnoringSafeArea(.all)
                 VStack {
                     List {
-                        ForEach(0..<appData.topics.count, id: \.self) { i in
-                            NavigationLink(destination: TopicDetail(topic: appData.topics[i])) {
-                                TopicsRow(topic: appData.topics[i])
-                            }.listRowBackground(self.colorScheme == .light ? Color(hex: appData.backgroundColor) : Color(UIColor.systemBackground))
+                        ForEach(0..<self.dataManager.appData.topics.count, id: \.self) { i in
+                            NavigationLink(destination: TopicDetail(topic: self.dataManager.appData.topics[i])) {
+                                TopicsRow(topic: self.dataManager.appData.topics[i])
+                            }.listRowBackground(self.colorScheme == .light ? Color(hex: self.dataManager.appData.backgroundColor) : Color(UIColor.systemBackground))
                         }
                     }
-                }.navigationBarTitle(Text(appData.title), displayMode: .inline)
+                }.navigationBarTitle(Text(self.dataManager.appData.title), displayMode: .inline)
                     .background(NavigationConfigurator { nc in
-                            nc.navigationBar.barTintColor = UIColor(hexString: appData.mainColor)
-                            nc.navigationBar.titleTextAttributes =  [.foregroundColor : UIColor(hexString: appData.accentColor), .font : UIFont(name: "VALORANT", size: 25) ?? UIFont.systemFont(ofSize: 25)]
+                        nc.navigationBar.barTintColor = UIColor(hexString: self.dataManager.appData.mainColor)
+                        nc.navigationBar.titleTextAttributes =  [.foregroundColor : UIColor(hexString: self.dataManager.appData.accentColor), .font : UIFont(name: "VALORANT", size: 25) ?? UIFont.systemFont(ofSize: 25)]
+                }).navigationBarItems(trailing:
+                Button(action: {
+                    self.dataManager.refreshData()
+                }) {
+                    Image(systemName: "arrow.clockwise")
                 })
                 
             }
         }.navigationViewStyle(StackNavigationViewStyle())
-        .accentColor(Color(hex: appData.accentColor))
+            .accentColor(Color(hex: dataManager.appData.accentColor))
     }
     
 }

@@ -10,13 +10,15 @@ import SwiftUI
 
 struct TopicDetail: View {
     var topic: Topic
+    @EnvironmentObject var dataManager: DataManager
+    
     var body: some View {
          VStack {
             List {
                 ForEach(topic.subTopics) { subtopic in
                     NavigationLink(destination: SubtopicDetail(subTopic: subtopic)) {
                         Text(subtopic.title)
-                    }.listRowBackground(Color(hex: appData.backgroundColor))
+                    }.listRowBackground(Color(hex: self.dataManager.appData.backgroundColor))
                 }
             }
          }.navigationBarTitle(topic.title)
@@ -26,7 +28,7 @@ struct TopicDetail: View {
 struct TopicDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            TopicDetail(topic: appData.topics[0])
+            TopicDetail(topic: previewData.topics[0])
         }
     }
 }

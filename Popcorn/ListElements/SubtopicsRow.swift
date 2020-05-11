@@ -25,6 +25,6 @@ struct SubtopicsRow: View {
 
 struct SubtopicsRow_Previews: PreviewProvider {
     static var previews: some View {
-        SubtopicsRow(subTopic: appData.topics[0].subTopics[0])
+        SubtopicsRow(subTopic: previewData.topics[0].subTopics[0])
     }
 }

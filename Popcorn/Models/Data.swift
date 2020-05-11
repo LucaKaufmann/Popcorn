@@ -10,10 +10,9 @@ import UIKit
 import SwiftUI
 import CoreLocation
 
-var appData: AppData = load("data.json")
+var previewData: AppData = load("data.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
-    
     let fileManager = FileManager.default
     let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
     let fileURL = documentsURL.appendingPathComponent(filename)
@@ -81,7 +80,7 @@ func loadDefault<T: Decodable>(_ filename: String, url: URL) -> T {
 //    task.resume()
 //}\
 
-func downloadFile(url: String) {
+func downloadFile(url: String, completion: ((Bool) -> ())? = nil) {
     let url:URL = URL(string: url)!
     let session = URLSession.shared
 
@@ -95,15 +94,24 @@ func downloadFile(url: String) {
         data, response, error) in
 
         guard let _:Data = data, let _:URLResponse = response  , error == nil else {
-
+            if let c = completion {
+                c(false)
+            }
             return
         }
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileURL = documentsURL.appendingPathComponent("data.json")
         do {
+            if let c = completion {
+                c(false)
+            }
             try data?.write(to: fileURL, options: .atomic)
-        } catch { }
+        } catch {
+            if let c = completion {
+                c(false)
+            }
+        }
     })
     task.resume()
 }

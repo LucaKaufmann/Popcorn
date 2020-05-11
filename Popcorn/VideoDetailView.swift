@@ -28,7 +28,7 @@ struct VideoDetailView: View {
 
 struct VideoDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        VideoDetailView(videoFile: appData.topics[0].subTopics[0].videos[0])
+        VideoDetailView(videoFile: previewData.topics[0].subTopics[0].videos[0])
     }
 }
 
