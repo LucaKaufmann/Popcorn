@@ -21,15 +21,15 @@ struct VideoRow: View {
                 Text(video.title)
             }
             Spacer()
-            ForEach(video.tags, id: \.self) { tag in
-                if subTopic.contains(tag: tag) {
-                    Text(tag)
+            ForEach(0 ..< self.video.tags.count) { index in
+                if self.subTopic.contains(tag: self.video.tags[index]) {
+                    AsyncImage(url:  URL(string: self.topic.getThumbnailUrlFor(tag: self.video.tags[index]))!, placeholder: Text("..."), cache: self.cache)
+                        .frame(maxWidth: 22, maxHeight: 25)
+                        .aspectRatio(contentMode: .fit)
                 } else {
                     Text("")
                 }
-//                    AsyncImage(url:  URL(string: self.topic.getThumbnailUrlFor(tag: tag))!, placeholder: Text(""), cache: self.cache)
-//                    .frame(minHeight: 40, maxHeight: 40)
-//                    .aspectRatio(1 / 1, contentMode: .fit)
+
             }
         }
     }

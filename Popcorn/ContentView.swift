@@ -27,7 +27,7 @@ struct ContentView: View {
                 }.navigationBarTitle(Text(self.dataManager.appData.title), displayMode: .inline)
                     .background(NavigationConfigurator { nc in
                         nc.navigationBar.barTintColor = UIColor(hexString: self.dataManager.appData.mainColor)
-                        nc.navigationBar.titleTextAttributes =  [.foregroundColor : UIColor(hexString: self.dataManager.appData.accentColor), .font : UIFont(name: "VALORANT", size: 25) ?? UIFont.systemFont(ofSize: 25)]
+                        nc.navigationBar.titleTextAttributes =  [.foregroundColor : UIColor(hexString: self.dataManager.appData.accentColor), .font : UIFont(name: self.dataManager.appData.font, size: 25) ?? UIFont.systemFont(ofSize: 25)]
                 }).navigationBarItems(trailing:
                 Button(action: {
                     self.dataManager.refreshData()

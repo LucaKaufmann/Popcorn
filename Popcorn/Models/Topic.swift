@@ -15,6 +15,7 @@ struct Topic: Hashable, Codable, Identifiable {
     var id: Int
     var subTopics: [SubTopic]
     var thumbnails: [Thumbnail]
+    var topicThumbnailUrl: String
     
     func getThumbnailUrlFor(tag: String) -> String {
         if let thumbnail = thumbnails.filter { $0.id.contains(tag) }.first {

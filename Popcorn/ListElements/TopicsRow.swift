@@ -11,6 +11,7 @@ import SwiftUI
 struct TopicsRow: View {
     
     var topic: Topic
+    @Environment(\.imageCache) var cache: ImageCache
     
     var body: some View {
         HStack {
@@ -18,7 +19,9 @@ struct TopicsRow: View {
                 Text(topic.title)
             }
             Spacer()
-            Image(systemName: "book")
+            AsyncImage(url:  URL(string: topic.topicThumbnailUrl)!, placeholder: Text("..."), cache: self.cache)
+            .frame(maxWidth: 22, maxHeight: 25)
+            .aspectRatio(contentMode: .fit)
             }.padding([.horizontal])
         
     }

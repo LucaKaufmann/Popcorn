@@ -48,6 +48,6 @@ struct SubTopic: Hashable, Codable, Identifiable {
     }
     
     func contains(tag: String) -> Bool {
-        return subfilters?.contains(tag) ?? false
+        return subfilters?.contains(where: {$0.caseInsensitiveCompare(tag) == .orderedSame}) ?? false
     }
 }
