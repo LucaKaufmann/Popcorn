@@ -12,6 +12,7 @@ struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var dataManager: DataManager
     
+    
     var body: some View {
         NavigationView {
             ZStack {
