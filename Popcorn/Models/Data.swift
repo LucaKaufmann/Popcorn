@@ -12,10 +12,17 @@ import CoreLocation
 
 var previewData: AppData = load("data.json")
 
+let APP_VERSION = "com.hotky.setups.currentversion"
+
 func load<T: Decodable>(_ filename: String) -> T {
     let fileManager = FileManager.default
     let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
     let fileURL = documentsURL.appendingPathComponent(filename)
+    
+    if needsUpgrade() {
+        return loadDefault(filename, url: fileURL)
+    }
+    
     if fileManager.fileExists(atPath: fileURL.path) {
         return decodeFile(filename: filename, url: fileURL)
     } else {
@@ -40,6 +47,25 @@ func decodeFile<T: Decodable>(filename: String, url: URL) -> T {
         try? fileManager.removeItem(at: url)
         return loadDefault(filename, url: url)
     }
+}
+
+func needsUpgrade() -> Bool {
+    if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+        if let previousVersion = UserDefaults.standard.string(forKey: APP_VERSION) {
+            let upgrade = !(appVersion == previousVersion)
+            if upgrade {
+                UserDefaults.standard.set(appVersion, forKey: APP_VERSION)
+            }
+            print("Data needs upgrade: \(upgrade)")
+            return upgrade
+        } else {
+            print("Data needs upgrade: true")
+            UserDefaults.standard.set(appVersion, forKey: APP_VERSION)
+            return true
+        }
+    }
+    print("Data needs upgrade: true")
+    return true
 }
 
 func loadDefault<T: Decodable>(_ filename: String, url: URL) -> T {
