@@ -12,7 +12,6 @@ struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var dataManager: DataManager
     
-    
     var body: some View {
         NavigationView {
             ZStack {
@@ -34,13 +33,12 @@ struct ContentView: View {
                     self.dataManager.refreshData()
                 }) {
                     Image(systemName: "arrow.clockwise")
-                })
+                    })
                 
             }
         }.navigationViewStyle(StackNavigationViewStyle())
             .accentColor(Color(hex: dataManager.appData.accentColor))
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

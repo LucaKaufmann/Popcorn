@@ -13,6 +13,7 @@ import CoreLocation
 var previewData: AppData = load("data.json")
 
 let APP_VERSION = "com.hotky.setups.currentversion"
+let LAST_UPDATE = "com.hotky.setups.lastUpdate"
 
 func load<T: Decodable>(_ filename: String) -> T {
     let fileManager = FileManager.default
@@ -125,13 +126,15 @@ func downloadFile(url: String, completion: ((Bool) -> ())? = nil) {
             }
             return
         }
+        print("File downloaded")
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileURL = documentsURL.appendingPathComponent("data.json")
         do {
             if let c = completion {
-                c(false)
+                c(true)
             }
+            print("File saved")
             try data?.write(to: fileURL, options: .atomic)
         } catch {
             if let c = completion {

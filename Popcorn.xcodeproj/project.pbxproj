@@ -120,7 +120,6 @@
 		81613104246039440038426A /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		816131082460547C0038426A /* valorant.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = valorant.ttf; sourceTree = "<group>"; };
 		81E51E452469242300077AA8 /* Valorant Setups.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Valorant Setups.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81E51E462469242300077AA8 /* Popcorn copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Popcorn copy-Info.plist"; path = "/Users/luca/git/Popcorn/Popcorn copy-Info.plist"; sourceTree = "<absolute>"; };
 		81E51E472469292900077AA8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		81E51E4A246946A300077AA8 /* VideoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRow.swift; sourceTree = "<group>"; };
 		81E51E4D246947E000077AA8 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
@@ -153,7 +152,6 @@
 			children = (
 				401C38C2244F40F00041F7AA /* Popcorn */,
 				401C38C1244F40F00041F7AA /* Products */,
-				81E51E462469242300077AA8 /* Popcorn copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
