@@ -34,8 +34,8 @@ class DataManager: ObservableObject {
             df.dateFormat = "yyyy-MM-dd hh:mm:ss"
             let d = df.string(from: lastUpdate)
             print("Last update \(d)")
-            if let diff = Calendar.current.dateComponents([.hour], from: lastUpdate, to: Date()).hour, diff > 1 {
-                print("Refreshing app data, last update over 1 hour ago")
+            if let diff = Calendar.current.dateComponents([.hour], from: lastUpdate, to: Date()).hour, diff > 12 {
+                print("Refreshing app data, last update over 12 hours ago")
                 refreshData()
             }
         } else {
