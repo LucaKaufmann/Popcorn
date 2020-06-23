@@ -15,5 +15,6 @@ struct AppData: Hashable, Codable {
     var backgroundColor: String
     var font: String
     var url: String
+    var aboutUrl: String
     var topics: [Topic]
 }

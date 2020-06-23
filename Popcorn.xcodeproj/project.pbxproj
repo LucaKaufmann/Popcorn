@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,6 +38,11 @@
 		81613103246036BC0038426A /* Color+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81613102246036BC0038426A /* Color+hex.swift */; };
 		81613105246039440038426A /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81613104246039440038426A /* UIColor+hex.swift */; };
 		816131092460547C0038426A /* valorant.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 816131082460547C0038426A /* valorant.ttf */; };
+		816C8E52247F99EF00D996CE /* MarkdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C8E51247F99EF00D996CE /* MarkdownViewController.swift */; };
+		816C8E53247F99EF00D996CE /* MarkdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C8E51247F99EF00D996CE /* MarkdownViewController.swift */; };
+		816C8E55247FAB0E00D996CE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C8E54247FAB0E00D996CE /* AboutView.swift */; };
+		816C8E56247FAB0E00D996CE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C8E54247FAB0E00D996CE /* AboutView.swift */; };
+		816C8E57247FB0D700D996CE /* MarkdownView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 816C8E4C247F97A000D996CE /* MarkdownView.framework */; };
 		81E51DF62469242300077AA8 /* Array+SafeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AC6AF02454567D00EFF78F /* Array+SafeSubscript.swift */; };
 		81E51DF72469242300077AA8 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C38F3245024FA0041F7AA /* Utility.swift */; };
 		81E51DF82469242300077AA8 /* TopicsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C38D7244F42610041F7AA /* TopicsRow.swift */; };
@@ -119,6 +124,9 @@
 		81613102246036BC0038426A /* Color+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+hex.swift"; sourceTree = "<group>"; };
 		81613104246039440038426A /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		816131082460547C0038426A /* valorant.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = valorant.ttf; sourceTree = "<group>"; };
+		816C8E4C247F97A000D996CE /* MarkdownView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarkdownView.framework; path = Carthage/Build/iOS/MarkdownView.framework; sourceTree = "<group>"; };
+		816C8E51247F99EF00D996CE /* MarkdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownViewController.swift; sourceTree = "<group>"; };
+		816C8E54247FAB0E00D996CE /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		81E51E452469242300077AA8 /* Valorant Setups.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Valorant Setups.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E51E472469292900077AA8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		81E51E4A246946A300077AA8 /* VideoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRow.swift; sourceTree = "<group>"; };
@@ -141,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				816C8E57247FB0D700D996CE /* MarkdownView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +161,7 @@
 			children = (
 				401C38C2244F40F00041F7AA /* Popcorn */,
 				401C38C1244F40F00041F7AA /* Products */,
+				816C8E4B247F97A000D996CE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,6 +194,8 @@
 				401C38CE244F40F40041F7AA /* LaunchScreen.storyboard */,
 				401C38D1244F40F40041F7AA /* Info.plist */,
 				401C38CB244F40F40041F7AA /* Preview Content */,
+				816C8E51247F99EF00D996CE /* MarkdownViewController.swift */,
+				816C8E54247FAB0E00D996CE /* AboutView.swift */,
 			);
 			path = Popcorn;
 			sourceTree = "<group>";
@@ -266,6 +278,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		816C8E4B247F97A000D996CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				816C8E4C247F97A000D996CE /* MarkdownView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,6 +313,7 @@
 				81E51DF52469242300077AA8 /* Sources */,
 				81E51E102469242300077AA8 /* Frameworks */,
 				81E51E112469242300077AA8 /* Resources */,
+				816C8E50247F97AF00D996CE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -364,6 +385,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		816C8E50247F97AF00D996CE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+				"$(SRCROOT)/output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		401C38BC244F40F00041F7AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -395,8 +438,10 @@
 				8107C75A2456C88400812FEB /* AVPlayer+isPlaying.swift in Sources */,
 				40AC6AFB2454567E00EFF78F /* Errors.swift in Sources */,
 				401C38E3244F63280041F7AA /* SubTopic.swift in Sources */,
+				816C8E52247F99EF00D996CE /* MarkdownViewController.swift in Sources */,
 				81613103246036BC0038426A /* Color+hex.swift in Sources */,
 				8107C7582456AFFD00812FEB /* PlayerTimeObserver.swift in Sources */,
+				816C8E55247FAB0E00D996CE /* AboutView.swift in Sources */,
 				401C38ED24501C1E0041F7AA /* VideoPlayerView.swift in Sources */,
 				40AC6AF82454567E00EFF78F /* ExtractionSource.swift in Sources */,
 				81E51E482469292900077AA8 /* DataManager.swift in Sources */,
@@ -435,8 +480,10 @@
 				81E51E082469242300077AA8 /* AVPlayer+isPlaying.swift in Sources */,
 				81E51E092469242300077AA8 /* Errors.swift in Sources */,
 				81E51E0A2469242300077AA8 /* SubTopic.swift in Sources */,
+				816C8E53247F99EF00D996CE /* MarkdownViewController.swift in Sources */,
 				81E51E0B2469242300077AA8 /* Color+hex.swift in Sources */,
 				81E51E0C2469242300077AA8 /* PlayerTimeObserver.swift in Sources */,
+				816C8E56247FAB0E00D996CE /* AboutView.swift in Sources */,
 				81E51E0D2469242300077AA8 /* VideoPlayerView.swift in Sources */,
 				81E51E0E2469242300077AA8 /* ExtractionSource.swift in Sources */,
 				81E51E492469292900077AA8 /* DataManager.swift in Sources */,
@@ -620,17 +667,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Popcorn/Preview Content\"";
 				DEVELOPMENT_TEAM = 6Y9C574C9M;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Popcorn copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hotky.Setups;
 				PRODUCT_NAME = "Valorant Setups";
 				SWIFT_VERSION = 5.0;
@@ -643,17 +694,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Popcorn/Preview Content\"";
 				DEVELOPMENT_TEAM = 6Y9C574C9M;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Popcorn copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hotky.Setups;
 				PRODUCT_NAME = "Valorant Setups";
 				SWIFT_VERSION = 5.0;

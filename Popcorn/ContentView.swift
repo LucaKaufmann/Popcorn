@@ -11,6 +11,8 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var dataManager: DataManager
+    @Environment(\.presentationMode) var presentation
+    @State var showingAbout = false
     
     var body: some View {
         NavigationView {
@@ -28,7 +30,17 @@ struct ContentView: View {
                     .background(NavigationConfigurator { nc in
                         nc.navigationBar.barTintColor = UIColor(hexString: self.dataManager.appData.mainColor)
                         nc.navigationBar.titleTextAttributes =  [.foregroundColor : UIColor(hexString: self.dataManager.appData.accentColor), .font : UIFont(name: self.dataManager.appData.font, size: 25) ?? UIFont.systemFont(ofSize: 25)]
-                }).navigationBarItems(trailing:
+                    }).navigationBarItems(leading:
+                        ZStack {
+                            Button(action: {
+                                self.showingAbout.toggle()
+                            }) {
+                                Image(systemName: "info.circle")
+                                }.sheet(isPresented: $showingAbout) {
+                                    AboutView(isPresented: self.$showingAbout, aboutUrl: self.dataManager.appData.aboutUrl)
+                            }.frame(width: 30, height: 40, alignment: .center).contentShape(Rectangle())
+                        },
+                                          trailing:
                 Button(action: {
                     self.dataManager.refreshData()
                 }) {
