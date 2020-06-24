@@ -13,6 +13,7 @@ struct Video: Hashable, Codable, Identifiable {
     var title: String
     var url: String
     var tags: [String]
+    var author: String
     
     func getVideoUrl(completion: @escaping (URL?) -> ()) {
         if url.contains("youtube") {

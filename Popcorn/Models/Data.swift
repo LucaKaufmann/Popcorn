@@ -51,6 +51,10 @@ func decodeFile<T: Decodable>(filename: String, url: URL) -> T {
 }
 
 func needsUpgrade() -> Bool {
+    #if DEBUG
+     return true
+    #endif
+    
     if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
         if let previousVersion = UserDefaults.standard.string(forKey: APP_VERSION) {
             let upgrade = !(appVersion == previousVersion)

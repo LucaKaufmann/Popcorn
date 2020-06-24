@@ -17,8 +17,9 @@ struct VideoRow: View {
     
     var body: some View {
         HStack {
-            VStack {
+            VStack(alignment: .leading) {
                 Text(video.title)
+                Text("Submitted by \(video.author)").font(.system(size: 9)).foregroundColor(Color(hex: previewData.mainColor))
             }
             Spacer()
             ForEach(0 ..< self.video.tags.count) { index in
