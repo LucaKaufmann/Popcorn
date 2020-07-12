@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PopcornCore
 
 class DataManager: ObservableObject {
     

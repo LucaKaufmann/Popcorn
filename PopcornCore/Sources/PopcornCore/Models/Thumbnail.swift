@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Thumbnail: Hashable, Codable, Identifiable {
-    var id: String
-    var url: String
+public struct Thumbnail: Hashable, Codable, Identifiable {
+    public var id: String
+    public var url: String
 }

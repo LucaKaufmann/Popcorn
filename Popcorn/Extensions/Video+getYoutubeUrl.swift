@@ -1,20 +1,15 @@
 //
-//  Video.swift
+//  Video+getYoutubeUrl.swift
 //  Popcorn
 //
-//  Created by Luca Kaufmann on 21.4.2020.
+//  Created by Luca Kaufmann on 12.7.2020.
 //  Copyright © 2020 mqtthings. All rights reserved.
 //
 
 import Foundation
+import PopcornCore
 
-struct Video: Hashable, Codable, Identifiable {
-    var id: Int
-    var title: String
-    var url: String
-    var tags: [String]
-    var author: String
-    
+extension Video {
     func getVideoUrl(completion: @escaping (URL?) -> ()) {
         if url.contains("youtube") {
             let y = YoutubeDirectLinkExtractor()
@@ -44,5 +39,5 @@ struct Video: Hashable, Codable, Identifiable {
         }
         
     }
-    
 }
+

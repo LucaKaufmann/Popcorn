@@ -9,6 +9,7 @@
 import UIKit
 import SwiftUI
 import CoreLocation
+import PopcornCore
 
 var previewData: AppData = load("data.json")
 

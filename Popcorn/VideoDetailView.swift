@@ -8,6 +8,7 @@
 
 import SwiftUI
 import AVKit
+import PopcornCore
 
 struct VideoDetailView: View {
     

@@ -10,14 +10,14 @@ import Foundation
 import SwiftUI
 
 
-struct Topic: Hashable, Codable, Identifiable {
-    var title: String
-    var id: Int
-    var subTopics: [SubTopic]
-    var thumbnails: [Thumbnail]
-    var topicThumbnailUrl: String
+public struct Topic: Hashable, Codable, Identifiable {
+    public var title: String
+    public var id: Int
+    public var subTopics: [SubTopic]
+    public var thumbnails: [Thumbnail]
+    public var topicThumbnailUrl: String
     
-    func getThumbnailUrlFor(tag: String) -> String {
+    public func getThumbnailUrlFor(tag: String) -> String {
         if let thumbnail = thumbnails.filter({ $0.id.contains(tag) }).first {
             return thumbnail.url
         }

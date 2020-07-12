@@ -8,20 +8,20 @@
 
 import Foundation
 
-struct SubTopic: Hashable, Codable, Identifiable {
-    var id: Int
-    var title: String
-    var videos: [Video]
-    var filters: [String]?
-    var subfilters: [String]?
-    var hasFilters: Bool {
+public struct SubTopic: Hashable, Codable, Identifiable {
+    public var id: Int
+    public var title: String
+    public var videos: [Video]
+    public var filters: [String]?
+    public var subfilters: [String]?
+    public var hasFilters: Bool {
         return filters?.count ?? 0 >= 1
     }
-    var hasSubFilters: Bool {
+    public var hasSubFilters: Bool {
         return subfilters?.count ?? 0 >= 1
     }
     
-    func videosWith(filters: [String]) -> [Video] {
+    public func videosWith(filters: [String]) -> [Video] {
         var videos = [Video]()
         for filter in filters {
             let filterResult = self.videos.filter { $0.tags.contains(filter) }
@@ -30,11 +30,11 @@ struct SubTopic: Hashable, Codable, Identifiable {
         return videos
     }
     
-    func videosWith(filter: String) -> [Video] {
+    public func videosWith(filter: String) -> [Video] {
         return self.videos.filter { $0.tags.contains(filter) }
     }
     
-    func videosWith(filter: String, subfilter: String) -> [Video] {
+    public func videosWith(filter: String, subfilter: String) -> [Video] {
         var filteredVideos = [Video]()
         if filter == "all" {
             filteredVideos = self.videos
@@ -47,7 +47,7 @@ struct SubTopic: Hashable, Codable, Identifiable {
         return filteredVideos
     }
     
-    func contains(tag: String) -> Bool {
+    public func contains(tag: String) -> Bool {
         return subfilters?.contains(where: {$0.caseInsensitiveCompare(tag) == .orderedSame}) ?? false
     }
 }

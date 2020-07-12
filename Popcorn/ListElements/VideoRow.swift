@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import PopcornCore
 
 struct VideoRow: View {
     
