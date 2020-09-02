@@ -20,9 +20,9 @@ struct TopicsRow: View {
                 Text(topic.title)
             }
             Spacer()
-            AsyncImage(url:  URL(string: topic.topicThumbnailUrl)!, placeholder: Text("..."), cache: self.cache)
-            .frame(maxWidth: 22, maxHeight: 25)
-            .aspectRatio(contentMode: .fit)
+//            AsyncImage(url:  URL(string: topic.topicThumbnailUrl)!, placeholder: Text("..."), cache: self.cache)
+//            .frame(maxWidth: 22, maxHeight: 25)
+//            .aspectRatio(contentMode: .fit)
             }.padding([.horizontal])
         
     }
